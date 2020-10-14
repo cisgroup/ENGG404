@@ -1,0 +1,612 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Probability Trees &#8212; Probability Theory</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Applications" href="04-applications.html" />
+    <link rel="prev" title="Probability Types" href="02-probability-types.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Probability Theory</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../script/welcome.html">
+   Welcome
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  What is Probability Theory?
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../02%20-%20What%20is%20Probability%20Theory%3F/script/01-introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../02%20-%20What%20is%20Probability%20Theory%3F/script/02-probability-definitions.html">
+   Probability Definitions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../02%20-%20What%20is%20Probability%20Theory%3F/script/03-set-theory.html">
+   Set Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../02%20-%20What%20is%20Probability%20Theory%3F/script/04-laws-of-probability.html">
+   Laws of Probability
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../02%20-%20What%20is%20Probability%20Theory%3F/script/05-independence.html">
+   Independence
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../02%20-%20What%20is%20Probability%20Theory%3F/script/06-applications.html">
+   Applications
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../02%20-%20What%20is%20Probability%20Theory%3F/script/07-summary.html">
+   Summary
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Conditional Probability
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-probability-types.html">
+   Probability Types
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Probability Trees
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-applications.html">
+   Applications
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-summary.html">
+   Summary
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/03 - Conditional Probability/script/03-probability-trees.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/JCSS-PMC/PMC"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/JCSS-PMC/PMC/issues/new?title=Issue%20on%20page%20%2F03 - Conditional Probability/script/03-probability-trees.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/JCSS-PMC/PMC/edit/master/03 - Conditional Probability/script/03-probability-trees.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#probability-tree">
+   Probability Tree
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-success-of-tv-advertising">
+   Example: Success of TV Advertising
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#marginal-probabilities">
+     Marginal Probabilities
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conditional-probabilities">
+     Conditional Probabilities
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-spam-filter">
+   Example: Spam Filter
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="probability-trees">
+<h1>Probability Trees<a class="headerlink" href="#probability-trees" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="probability-tree">
+<h2>Probability Tree<a class="headerlink" href="#probability-tree" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-probability-tree admonition">
+<p class="admonition-title">Probability Tree</p>
+<p>A probability tree is a graphical depiction of conditional probabilities. It shows a sequence of events as a path, like branches of a tree.</p>
+</div>
+</div>
+<div class="section" id="example-success-of-tv-advertising">
+<h2>Example: Success of TV Advertising<a class="headerlink" href="#example-success-of-tv-advertising" title="Permalink to this headline">¶</a></h2>
+<p>Assume there are three programs that can be viewed on a Sunday evening. Viewers can either watch ‘60 Minutes’, ‘Desperate Housewives’ or a football match. We want to investigate how successfull TV advertisement is given the TV program that can be watched. For each program, we collect data on the percentage of viewers that:</p>
+<ul class="simple">
+<li><p>Watch the ads,</p></li>
+<li><p>Skip the ads.</p></li>
+</ul>
+<div class="section" id="marginal-probabilities">
+<h3>Marginal Probabilities<a class="headerlink" href="#marginal-probabilities" title="Permalink to this headline">¶</a></h3>
+<p>It is given that the viewers watch the three respective shows with the following probabilities:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(P(\text{60 Minutes}) = 0.15\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(P(\text{Desperate Housewives}) = 0.35\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(P(\text{Football match}) = 0.5\)</span>.</p></li>
+</ul>
+<p>The three probabilities above represent marginal probabilities. These probabilities are illustrated in the probability tree below.</p>
+<a class="reference internal image-reference" href="../../_images/tree-1.png" id="image-tree-1"><img alt="../../_images/tree-1.png" id="image-tree-1" src="../../_images/tree-1.png" style="height: 300px;" /></a>
+</div>
+<div class="section" id="conditional-probabilities">
+<h3>Conditional Probabilities<a class="headerlink" href="#conditional-probabilities" title="Permalink to this headline">¶</a></h3>
+<p>There are six different conditional probabilities on whether a viewer watches ads or not, e.g.:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(P(\text{Sees ads}\,|\,\text{60 Minutes}) = 0.9\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(P(\text{Skips ads}\,|\,\text{60 Minutes}) = 0.1\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(P(\text{Sees ads}\,|\,\text{Desperate Housewives}) = 0.2\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(P(\text{Skips ads}\,|\,\text{Desperate Housewives}) = 0.8\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(P(\text{Sees ads}\,|\,\text{Football match}) = 0.5\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(P(\text{Skips ads}\,|\,\text{Football match}) = 0.5\)</span>.</p></li>
+</ul>
+<p>These conditional probabilities are illustrated in the probability tree below.</p>
+<a class="reference internal image-reference" href="../../_images/tree-2.png" id="image-tree-2"><img alt="../../_images/tree-2.png" id="image-tree-2" src="../../_images/tree-2.png" style="height: 300px;" /></a>
+<div class="admonition-working-with-probability-trees admonition">
+<p class="admonition-title">Working with Probability Trees</p>
+<p>Let <span class="math notranslate nohighlight">\(A_1, A_2 , \dots, A_n\)</span> be <span class="math notranslate nohighlight">\(n\)</span> mutually exclusive and collectively exhaustive
+events. In addition, let <span class="math notranslate nohighlight">\(B_1 , B_2, \dots, B_k\)</span> be <span class="math notranslate nohighlight">\(k\)</span> mutually exclusive and
+collectively exhaustive events. Then <span class="math notranslate nohighlight">\(P(A_1 \cap B_2)\)</span> is the joint probability
+on the events <span class="math notranslate nohighlight">\(A_1\)</span> and <span class="math notranslate nohighlight">\(B_2\)</span>. Computing the marginal probability of <span class="math notranslate nohighlight">\(A_1\)</span> can
+be done in the following way:</p>
+<div class="math notranslate nohighlight">
+\[
+P(A_1) = P(A_1 \cap B_1) + P(A_1 \cap B_2) + \dots + P(A_1 \cap B_k)
+\]</div>
+</div>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+<strong>Question 1</strong>: Using the probability tree above, what is the joint probability for ‘Football match’ and ‘Sees Ads’ (i.e. <span class="math notranslate nohighlight">\(P(\text{Sees ads}\cap\text{Football match})\)</span>)?<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text"><strong>Solution</strong>: We know from conditional probability that:</p>
+<div class="math notranslate nohighlight">
+\[
+P(\text{Sees ads}\cap\text{Football match}) = P(\text{Sees ads}\,|\,\text{Football match}) \cdot P(\text{Football match})
+\]</div>
+<p class="card-text">It is given that: <span class="math notranslate nohighlight">\(P(\text{Football match}) =0.5\)</span> and <span class="math notranslate nohighlight">\(P(\text{Sees ads}\,|\,\text{Football match}) = 0.5\)</span>. Therefore:</p>
+<div class="math notranslate nohighlight">
+\[
+P(\text{Sees ads}\cap\text{Football match}) = 0.5 \cdot 0.5 = 0.25
+\]</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+<strong>Question 2</strong>: What is the marginal probability for ‘Sees Ads’ (i.e. <span class="math notranslate nohighlight">\(P(\text{Sees ads})\)</span>)?<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text"><strong>Solution</strong>: We know from “working with probability trees” that we can calculate <span class="math notranslate nohighlight">\(P(\text{Sees ads})\)</span> the following way:</p>
+<div class="math notranslate nohighlight">
+\[
+P(\text{Sees ads}) = P(\text{60 Min} \cap \text{Sees ads}) + P(\text{D.H.} \cap \text{Sees ads}) + P(\text{Football match} \cap \text{Sees ads})
+\]</div>
+<p class="card-text">We get:</p>
+<div class="math notranslate nohighlight">
+\[
+P(\text{Sees ads}) = 0.15 \cdot 0.9 + 0.35 \cdot 0.2 + 0.5 \cdot 0.5 = 0.455
+\]</div>
+</div>
+</details><table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>60 Minutes</p></th>
+<th class="head"><p>Desperate Housewives</p></th>
+<th class="head"><p>Football match</p></th>
+<th class="head"><p>Total</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Sees Ads</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Skips Ads</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Total</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+<strong>Question 3</strong>: Consider the previous question. Fill in the contingency table above.<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text"><strong>Solution</strong>: From the previous questions, we know that <span class="math notranslate nohighlight">\(P(\text{Sees ads}) = 0.455\)</span> and <span class="math notranslate nohighlight">\(P(\text{Sees ads}\cap\text{Football match}) = 0.25\)</span>. Therefore we can calculate <span class="math notranslate nohighlight">\(P(\text{Skips ads})\)</span> and <span class="math notranslate nohighlight">\(P(\text{Skips ads}\cap\text{Football match})\)</span>. We get:</p>
+<ul class="simple">
+<li><p class="card-text"><span class="math notranslate nohighlight">\(P(\text{Skips ads}) = 1-0.455 = 0.545\)</span></p></li>
+<li><p class="card-text"><span class="math notranslate nohighlight">\(P(\text{Skips ads}\cap\text{Football match}) = P(\text{Football match}) - P(\text{Football match}\cap\text{Sees ads})\)</span>
+<span class="math notranslate nohighlight">\(P(\text{Skips ads}\cap\text{Football match}) = 0.5 -0.25 = 0.25\)</span></p></li>
+</ul>
+<p class="card-text">From the probability tree, we know that <span class="math notranslate nohighlight">\(P(\text{60 Minutes}) = 0.15\)</span>, <span class="math notranslate nohighlight">\(P(\text{Desperate Housewives}) = 0.35\)</span> and <span class="math notranslate nohighlight">\(P(\text{Football match}) = 0.50\)</span>. Similar reasoning as in the previous question for the other joint probabilities yields the contingency table below.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p class="card-text"></p></th>
+<th class="head"><p class="card-text">60 Minutes</p></th>
+<th class="head"><p class="card-text">Desperate Housewives</p></th>
+<th class="head"><p class="card-text">Football match</p></th>
+<th class="head"><p class="card-text">Total</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="card-text">Sees Ads</p></td>
+<td><p class="card-text">0.135</p></td>
+<td><p class="card-text">0.07</p></td>
+<td><p class="card-text">0.25</p></td>
+<td><p class="card-text">0.455</p></td>
+</tr>
+<tr class="row-odd"><td><p class="card-text">Skips Ads</p></td>
+<td><p class="card-text">0.015</p></td>
+<td><p class="card-text">0.28</p></td>
+<td><p class="card-text">0.25</p></td>
+<td><p class="card-text">0.545</p></td>
+</tr>
+<tr class="row-even"><td><p class="card-text">Total</p></td>
+<td><p class="card-text">0.15</p></td>
+<td><p class="card-text">0.35</p></td>
+<td><p class="card-text">0.50</p></td>
+<td><p class="card-text">1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details></div>
+</div>
+<div class="section" id="example-spam-filter">
+<h2>Example: Spam Filter<a class="headerlink" href="#example-spam-filter" title="Permalink to this headline">¶</a></h2>
+<p>Assume workers of a company want to filter out junk mail from important mail messages. They base their method on past data. For example, 20% of all emails that were considered junk mail contained the word combination “Nigerian general”.
+Past data indicates the following probabilities:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(P(\text{Nigerian general appears}\,|\,\text{Junk mail}) = 0.2\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(P(\text{Nigerian general appears}\,|\,\text{Not junk mail}) = 0.001\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(P(\text{Junk mail}) = 0.50\)</span>.</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Junk mail</p></th>
+<th class="head"><p>Not junk mail</p></th>
+<th class="head"><p>Total</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Nigerian general appears</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Nigerian general does not appear</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Total</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+<strong>Question 1</strong>: Fill in the contingency table above.<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text"><strong>Solution</strong>:  It is given that <span class="math notranslate nohighlight">\(P(\text{Junk mail}) = 0.50\)</span>. Therefore:</p>
+<ul class="simple">
+<li><p class="card-text"><span class="math notranslate nohighlight">\(P(\text{Not junk mail}) = 1- 0.5 = 0.5\)</span></p></li>
+<li><p class="card-text"><span class="math notranslate nohighlight">\(P(\text{Nigerian general appears} \cap \text{Junk mail})\)</span>
+<span class="math notranslate nohighlight">\( = P(\text{Nigerian general appears}\,|\,\text{Junk mail}) \cdot P(\text{Junk mail}) = 0.2 \cdot 0.5 = 0.1\)</span>,</p></li>
+<li><p class="card-text"><span class="math notranslate nohighlight">\(P(\text{Nigerian general appears} \cap \text{No junk mail})\)</span>
+<span class="math notranslate nohighlight">\( = P(\text{Nigerian general appears}\,|\,\text{No junk mail}) \cdot P(\text{No junk mail}) = 0.001 \cdot 0.5 = 0.0005\)</span>,</p></li>
+</ul>
+<p class="card-text">Similar reasoning for <span class="math notranslate nohighlight">\(P(\text{Nigerian general does not appears} \cap \text{Junk mail})\)</span> and <span class="math notranslate nohighlight">\(P(\text{Nigerian general does not appears} \cap \text{No junk mail})\)</span> leads to the contingency table below.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p class="card-text"></p></th>
+<th class="head"><p class="card-text">Junk mail</p></th>
+<th class="head"><p class="card-text">Not junk mail</p></th>
+<th class="head"><p class="card-text">Total</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="card-text">Nigerian general appears</p></td>
+<td><p class="card-text">0.1</p></td>
+<td><p class="card-text">0.0005</p></td>
+<td><p class="card-text">0.1005</p></td>
+</tr>
+<tr class="row-odd"><td><p class="card-text">Nigerian general does not appear</p></td>
+<td><p class="card-text">0.4</p></td>
+<td><p class="card-text">0.4995</p></td>
+<td><p class="card-text">0.8995</p></td>
+</tr>
+<tr class="row-even"><td><p class="card-text">Total</p></td>
+<td><p class="card-text">0.5</p></td>
+<td><p class="card-text">0.5</p></td>
+<td><p class="card-text">1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+<strong>Question 2</strong>: Using the contingency table above, calculate the probability that an email should be considered junk mail given that the phrase “Nigerian general” appears.<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text"><strong>Solution</strong>:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+P(\text{Junk mail}\,|\,\text{Nigerian general appears}) &amp;= \frac{P(\text{Junk mail} \cap \text{Nigerian general appears})}{P(\text{Nigerian general appears})}\\ &amp;= \frac{0.1}{0.1005} = 0.995
+\end{align*}\]</div>
+<p class="card-text">We can conclude that email messages to this employee with the phrase “Nigerian general” have a high probability (more than 99% ) of being spam. The spam filter should move emails containing this phrase straight to the junk folder.</p>
+</div>
+</details></div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./03 - Conditional Probability/script"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="02-probability-types.html" title="previous page">Probability Types</a>
+    <a class='right-next' id="next-link" href="04-applications.html" title="next page">Applications</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Prof. Dr. Jürgen Hackl<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

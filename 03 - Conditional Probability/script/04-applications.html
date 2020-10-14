@@ -1,0 +1,622 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Applications &#8212; Probability Theory</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Summary" href="05-summary.html" />
+    <link rel="prev" title="Probability Trees" href="03-probability-trees.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Probability Theory</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../script/welcome.html">
+   Welcome
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  What is Probability Theory?
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../02%20-%20What%20is%20Probability%20Theory%3F/script/01-introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../02%20-%20What%20is%20Probability%20Theory%3F/script/02-probability-definitions.html">
+   Probability Definitions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../02%20-%20What%20is%20Probability%20Theory%3F/script/03-set-theory.html">
+   Set Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../02%20-%20What%20is%20Probability%20Theory%3F/script/04-laws-of-probability.html">
+   Laws of Probability
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../02%20-%20What%20is%20Probability%20Theory%3F/script/05-independence.html">
+   Independence
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../02%20-%20What%20is%20Probability%20Theory%3F/script/06-applications.html">
+   Applications
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../02%20-%20What%20is%20Probability%20Theory%3F/script/07-summary.html">
+   Summary
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Conditional Probability
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-probability-types.html">
+   Probability Types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-probability-trees.html">
+   Probability Trees
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Applications
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-summary.html">
+   Summary
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/03 - Conditional Probability/script/04-applications.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/JCSS-PMC/PMC"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/JCSS-PMC/PMC/issues/new?title=Issue%20on%20page%20%2F03 - Conditional Probability/script/04-applications.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/JCSS-PMC/PMC/edit/master/03 - Conditional Probability/script/04-applications.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#naive-bayes-classification">
+   Naive Bayes Classification
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-weather-forecast">
+     Example: Weather Forecast
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="applications">
+<h1>Applications<a class="headerlink" href="#applications" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="naive-bayes-classification">
+<h2>Naive Bayes Classification<a class="headerlink" href="#naive-bayes-classification" title="Permalink to this headline">¶</a></h2>
+<blockquote class="epigraph">
+<div><p>Naive Bayes is one of the most efficient and effective inductive learning algorithms for machine learning and data mining. Its competitive performance in classification is surprising, because the conditional independence assumption on which it is based, is rarely true in real-world applications.</p>
+<p class="attribution">—Zhang, 2004</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Naive Bayes is useful for classification of emails whether they belong to the spam folder or are legitimate.</p></li>
+<li><p>Naive Bayes is useful for machine learning, (algorithms that can learn from data).</p></li>
+<li><p>Naive Bayes is useful for clustering techniques, where all kinds of objects in the same group (called a cluster) are more similar (in some sense or another) to each other than to those in other groups (clusters).</p></li>
+</ul>
+<div class="admonition-bayes-rule admonition">
+<p class="admonition-title">Bayes’ Rule</p>
+<p>Naive Bayes classification depends on Bayes’ Rule. For two events <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, Bayes’ rule can be expressed by the following relationship:</p>
+<div class="math notranslate nohighlight">
+\[
+P(B|A) = \frac{P(B \cap A)}{P(A)} = \frac{P(A \cap B)}{P(A)} = \frac{P(A|B)\cdot P(B)}{P(A)}
+\]</div>
+<p>provided that <span class="math notranslate nohighlight">\(P(A) \not= 0\)</span>.</p>
+<p>Here, <span class="math notranslate nohighlight">\(P(B)\)</span> is called the <strong>a priori</strong> probability of <span class="math notranslate nohighlight">\(B\)</span> and <span class="math notranslate nohighlight">\(P(B|A)\)</span> is called the <strong>a posteriori</strong> probability of <span class="math notranslate nohighlight">\(B\)</span>. Note that we expressed the probability of <span class="math notranslate nohighlight">\(B\)</span> given <span class="math notranslate nohighlight">\(A\)</span> in terms of <span class="math notranslate nohighlight">\(A\)</span> given <span class="math notranslate nohighlight">\(B\)</span>.</p>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p><strong>Conditional Independence Assumption</strong></p>
+<p>Naive Bayes Classification relies heavily on two assumptions:</p>
+<ol class="simple">
+<li><p>All events are equally important (they all have equal weights).</p></li>
+<li><p>All events are mutually independent.</p></li>
+</ol>
+</div>
+<div class="section" id="example-weather-forecast">
+<h3>Example: Weather Forecast<a class="headerlink" href="#example-weather-forecast" title="Permalink to this headline">¶</a></h3>
+<p>Let us assume the weather is as follows:</p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="8b4a9deb-65dd-4513-888d-a35c6009caa9" name="33fbe77a-4960-49f6-8df7-72eaaab5f0c5" type="radio">
+</input><label class="tabbed-label" for="8b4a9deb-65dd-4513-888d-a35c6009caa9">
+Outlook</label><div class="tabbed-content docutils">
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>yes</p></th>
+<th class="head"><p>no</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Sunny</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Overcast</p></td>
+<td><p>4</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Rainy</p></td>
+<td><p>3</p></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="861aa180-f0ca-4d66-8cdb-6b410e7e97d6" name="33fbe77a-4960-49f6-8df7-72eaaab5f0c5" type="radio">
+</input><label class="tabbed-label" for="861aa180-f0ca-4d66-8cdb-6b410e7e97d6">
+Temperature</label><div class="tabbed-content docutils">
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>yes</p></th>
+<th class="head"><p>no</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Hot</p></td>
+<td><p>2</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mild</p></td>
+<td><p>4</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>Cold</p></td>
+<td><p>3</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="3fca3bf1-5ad6-4026-a35e-e9d0577ee73f" name="33fbe77a-4960-49f6-8df7-72eaaab5f0c5" type="radio">
+</input><label class="tabbed-label" for="3fca3bf1-5ad6-4026-a35e-e9d0577ee73f">
+Humidity</label><div class="tabbed-content docutils">
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>yes</p></th>
+<th class="head"><p>no</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>High</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>Normal</p></td>
+<td><p>6</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="5cb3c14d-7376-438d-988a-746cafe95a58" name="33fbe77a-4960-49f6-8df7-72eaaab5f0c5" type="radio">
+</input><label class="tabbed-label" for="5cb3c14d-7376-438d-988a-746cafe95a58">
+Windy</label><div class="tabbed-content docutils">
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>yes</p></th>
+<th class="head"><p>no</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>False</p></td>
+<td><p>6</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>True</p></td>
+<td><p>3</p></td>
+<td><p>3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="c688f8bf-da51-4b50-ac02-da27ab100bbc" name="33fbe77a-4960-49f6-8df7-72eaaab5f0c5" type="radio">
+</input><label class="tabbed-label" for="c688f8bf-da51-4b50-ac02-da27ab100bbc">
+Play</label><div class="tabbed-content docutils">
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>yes</p></th>
+<th class="head"><p>no</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Converting the counts into probabilities yields the table below. Note that the table above is not a contingency table!</p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="6c2ae11b-cb3b-412a-b961-53be960f0b47" name="b910bf03-d699-483e-a87f-915967c88f63" type="radio">
+</input><label class="tabbed-label" for="6c2ae11b-cb3b-412a-b961-53be960f0b47">
+Outlook</label><div class="tabbed-content docutils">
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>yes</p></th>
+<th class="head"><p>no</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Sunny</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{2}{9}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{3}{5}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Overcast</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{4}{9}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{0}{5}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Rainy</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{3}{9}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{2}{5}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="91fa6cdb-6a43-4c23-a06f-7268876ccefd" name="b910bf03-d699-483e-a87f-915967c88f63" type="radio">
+</input><label class="tabbed-label" for="91fa6cdb-6a43-4c23-a06f-7268876ccefd">
+Temperature</label><div class="tabbed-content docutils">
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>yes</p></th>
+<th class="head"><p>no</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Hot</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{2}{9}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{2}{5}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Mild</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{4}{9}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{2}{5}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Cold</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{3}{9}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{1}{5}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="0fc45e7a-db0f-4afb-b152-f8989027a043" name="b910bf03-d699-483e-a87f-915967c88f63" type="radio">
+</input><label class="tabbed-label" for="0fc45e7a-db0f-4afb-b152-f8989027a043">
+Humidity</label><div class="tabbed-content docutils">
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>yes</p></th>
+<th class="head"><p>no</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>High</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{3}{9}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{4}{5}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Normal</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{6}{9}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{1}{5}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="2eec364a-4963-476e-b5f4-402ae0fbacbc" name="b910bf03-d699-483e-a87f-915967c88f63" type="radio">
+</input><label class="tabbed-label" for="2eec364a-4963-476e-b5f4-402ae0fbacbc">
+Windy</label><div class="tabbed-content docutils">
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>yes</p></th>
+<th class="head"><p>no</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>False</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{6}{9}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{2}{5}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>True</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{3}{9}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{3}{5}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="16c0a0fe-3b91-4f95-bc55-b846d97ca1ad" name="b910bf03-d699-483e-a87f-915967c88f63" type="radio">
+</input><label class="tabbed-label" for="16c0a0fe-3b91-4f95-bc55-b846d97ca1ad">
+Play</label><div class="tabbed-content docutils">
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>yes</p></th>
+<th class="head"><p>no</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\frac{9}{14}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{5}{14}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+<strong>Question</strong>: What is the probability that the outlook is sunny, the temperature is considered cold, the humidity is high and that it is windy and play is either ‘yes’ or ‘no’?<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text"><strong>Solution</strong>: We get for a sunny outlook, a cool temperature, high humidity, windy weather and play equal to yes: <span class="math notranslate nohighlight">\(\frac{2}{9} \cdot \frac{3}{9}  \cdot \frac{3}{9} \cdot \frac{3}{9} \cdot \frac{9}{14} \approx 0.0053\)</span>.</p>
+<p class="card-text">We get for no sunny outlook, no cool temperature, no high humidity, no windy
+weather and play equal to no: <span class="math notranslate nohighlight">\(\frac{3}{5} \cdot \frac{1}{5}  \cdot \frac{4}{5} \cdot \frac{3}{5} \cdot \frac{5}{14} \approx 0.0206\)</span></p>
+<p class="card-text">So, transforming this to probabilities by normalizing the above values, we get:</p>
+<ul class="simple">
+<li><p class="card-text"><span class="math notranslate nohighlight">\(P(\text{yes}) = \frac{0.0053}{0.0053+0.0206} = 0.205 = 20.5\%\)</span></p></li>
+<li><p class="card-text"><span class="math notranslate nohighlight">\(P(\text{no}) = \frac{0.0206}{0.0053+0.0206} = 0.795 = 79.5\%\)</span></p></li>
+</ul>
+<p class="card-text">We can immediately see that these probabilities add up to 1.</p>
+</div>
+</details></div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./03 - Conditional Probability/script"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="03-probability-trees.html" title="previous page">Probability Trees</a>
+    <a class='right-next' id="next-link" href="05-summary.html" title="next page">Summary</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Prof. Dr. Jürgen Hackl<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

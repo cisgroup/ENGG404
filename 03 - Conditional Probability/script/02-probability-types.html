@@ -1,0 +1,500 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Probability Types &#8212; Probability Theory</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Probability Trees" href="03-probability-trees.html" />
+    <link rel="prev" title="Introduction" href="01-introduction.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Probability Theory</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../script/welcome.html">
+   Welcome
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  What is Probability Theory?
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../02%20-%20What%20is%20Probability%20Theory%3F/script/01-introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../02%20-%20What%20is%20Probability%20Theory%3F/script/02-probability-definitions.html">
+   Probability Definitions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../02%20-%20What%20is%20Probability%20Theory%3F/script/03-set-theory.html">
+   Set Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../02%20-%20What%20is%20Probability%20Theory%3F/script/04-laws-of-probability.html">
+   Laws of Probability
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../02%20-%20What%20is%20Probability%20Theory%3F/script/05-independence.html">
+   Independence
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../02%20-%20What%20is%20Probability%20Theory%3F/script/06-applications.html">
+   Applications
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../02%20-%20What%20is%20Probability%20Theory%3F/script/07-summary.html">
+   Summary
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Conditional Probability
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Probability Types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-probability-trees.html">
+   Probability Trees
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-applications.html">
+   Applications
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-summary.html">
+   Summary
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/03 - Conditional Probability/script/02-probability-types.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/JCSS-PMC/PMC"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/JCSS-PMC/PMC/issues/new?title=Issue%20on%20page%20%2F03 - Conditional Probability/script/02-probability-types.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/JCSS-PMC/PMC/edit/master/03 - Conditional Probability/script/02-probability-types.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#marginal-joint-and-conditional-probabilities">
+   Marginal, Joint and Conditional Probabilities
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examples">
+   Examples
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="probability-types">
+<h1>Probability Types<a class="headerlink" href="#probability-types" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="marginal-joint-and-conditional-probabilities">
+<h2>Marginal, Joint and Conditional Probabilities<a class="headerlink" href="#marginal-joint-and-conditional-probabilities" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-marginal-probability admonition">
+<p class="admonition-title">Marginal Probability</p>
+<p>The marginal probability is the unconditional probability on an event. This probability is not conditioned on any other event.</p>
+<p>Notation: The marginal probabilities of two arbitrary events <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> is denoted by respectively <span class="math notranslate nohighlight">\(P(A)\)</span> and <span class="math notranslate nohighlight">\(P(B)\)</span>.</p>
+</div>
+<div class="admonition-joint-probability admonition">
+<p class="admonition-title">Joint Probability</p>
+<p>The joint probability is the probability of simultaneous events. This is the probability of the intersection of two or more events.</p>
+<p>Notation: The joint probability of two arbitrary events <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> is denoted by
+<span class="math notranslate nohighlight">\(P(A \cap B)\)</span>.</p>
+</div>
+<div class="admonition-conditional-probability admonition">
+<p class="admonition-title">Conditional Probability</p>
+<p>The conditional probability is the probability of an event given that some other event has occured. The information from the event that has occured can influence the probability of the original event.</p>
+<p>Notation: For two events <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, the conditional probability of <span class="math notranslate nohighlight">\(A\)</span> given <span class="math notranslate nohighlight">\(B\)</span> is denoted by <span class="math notranslate nohighlight">\(P(A|B)\)</span> and the conditional probability of <span class="math notranslate nohighlight">\(B\)</span> given <span class="math notranslate nohighlight">\(A\)</span> is denoted by <span class="math notranslate nohighlight">\(P(B|A)\)</span>.</p>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>In general, for two arbitrary events <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(P(A|B) \not= P(B|A)\)</span>.</p>
+</div>
+<p>Figure <a class="reference internal" href="#figure-venn-old"><span class="std std-numref">Fig. 1</span></a> shows the ‘old’ sample space <span class="math notranslate nohighlight">\(S\)</span> for two events <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>. Note that there is an overlap between <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>.</p>
+<div class="figure align-default" id="figure-venn-old">
+<a class="reference internal image-reference" href="../../_images/venn-old.png"><img alt="../../_images/venn-old.png" src="../../_images/venn-old.png" style="height: 200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">“old” sample space <span class="math notranslate nohighlight">\(S\)</span></span><a class="headerlink" href="#figure-venn-old" title="Permalink to this image">¶</a></p>
+</div>
+<p>Figure <a class="reference internal" href="#figure-venn-new"><span class="std std-numref">Fig. 2</span></a> shows the ‘new’ sample space <span class="math notranslate nohighlight">\(S\)</span> for two events <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> , because it shows the relation with respect to conditional probabilities. The conditional probability can be calculated by dividing the probability of the dark blue area (<span class="math notranslate nohighlight">\(P(A \cap B)\)</span>) by the probability of the light blue area (<span class="math notranslate nohighlight">\(P(B)\)</span>). Note that the area of <span class="math notranslate nohighlight">\(A \cap B\)</span> can be at most as large as the area of <span class="math notranslate nohighlight">\(B\)</span> (which is the case if <span class="math notranslate nohighlight">\(B\)</span> is fully contained in <span class="math notranslate nohighlight">\(A\)</span>). Therefore, if we calculate the conditional probability <span class="math notranslate nohighlight">\(P(A|B) = \frac{P(A \cap B)}{P(B)}\)</span>, we immediately have that <span class="math notranslate nohighlight">\(P(A|B)\)</span> is smaller than or equal 1.</p>
+<div class="figure align-default" id="figure-venn-new">
+<a class="reference internal image-reference" href="../../_images/venn-new.png"><img alt="../../_images/venn-new.png" src="../../_images/venn-new.png" style="height: 200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">“new” sample space <span class="math notranslate nohighlight">\(S\)</span></span><a class="headerlink" href="#figure-venn-new" title="Permalink to this image">¶</a></p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Proof of <span class="math notranslate nohighlight">\(P(A|B) \not= P(B|A)\)</span></p>
+<p>Assume that:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(P(A) \not= P(B)\)</span>, <span class="math notranslate nohighlight">\(P(A) \not= 0\)</span> and <span class="math notranslate nohighlight">\(P(B) \not= 0\)</span>.</p></li>
+</ul>
+<p>We get:</p>
+<div class="math notranslate nohighlight">
+\[
+P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{P(B \cap A)}{P(B)} \not = \frac{P(B \cap A)}{P(A)} = P(B|A)
+\]</div>
+<p>where we used in the second last step that <span class="math notranslate nohighlight">\(P(A) \not= P(B)\)</span>.</p>
+</div>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>Consider the internet shopping example we saw earlier. Recall that the contingency table showed the following pieces of information:</p>
+<ul class="simple">
+<li><p>The website through which a customer ended up at Amazon.com</p></li>
+<li><p>Whether the customer made a purchase or not</p></li>
+</ul>
+<p>The probability types that are given in a table corresponding to the contingency table are always</p>
+<ul class="simple">
+<li><p>The marginal probabilities</p></li>
+<li><p>The joint probabilities</p></li>
+</ul>
+<p>The conditional probabilities can be calculated based upon these marginal and joint probabilities.</p>
+<p>In the table below, the marginal probabilities are visible in the column ‘Total’ and the row ‘Total’. The joint probabilities are visible in the columns ‘MSN’, ‘Recipe Source’ and ‘Yahoo’ and the rows ‘NP’ and ‘P’.</p>
+<table class="table" id="table-amazon-3">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>MSN</p></th>
+<th class="head"><p>Recipe Source</p></th>
+<th class="head"><p>Yahoo</p></th>
+<th class="head"><p>Total</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>P</p></td>
+<td><p><span class="math notranslate nohighlight">\(P(\text{MSN} \cap \text{P})\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(P(\text{Recipe Source} \cap \text{P})\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(P(\text{Yahoo} \cap \text{P})\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(P(\text{P})\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>NP</p></td>
+<td><p><span class="math notranslate nohighlight">\(P(\text{MSN} \cap \text{NP})\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(P(\text{Recipe Source} \cap \text{NP})\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(P(\text{Yahoo} \cap \text{NP})\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(P(\text{NP})\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Total</p></td>
+<td><p><span class="math notranslate nohighlight">\(P(\text{MSN})\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(P(\text{Recipe Source})\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(P(\text{Yahoo})\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+<strong>Question</strong>: Consider again the internet shopping example that we saw earlier. Customers from which website are most likely to make a purchase on Amazon.com?<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text"><strong>Solution</strong>: The table below shows again the data (in terms of probabilities) for web shopping at Amazon.com. The table shows the website through which a customer ended up at Amazon.com and whether the customer made a purchase or not.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p class="card-text"></p></th>
+<th class="head"><p class="card-text">MSN</p></th>
+<th class="head"><p class="card-text">Recipe Source</p></th>
+<th class="head"><p class="card-text">Yahoo</p></th>
+<th class="head"><p class="card-text">Total</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="card-text">No Purchase</p></td>
+<td><p class="card-text">0.396</p></td>
+<td><p class="card-text">0.243</p></td>
+<td><p class="card-text">0.332</p></td>
+<td><p class="card-text">0.971</p></td>
+</tr>
+<tr class="row-odd"><td><p class="card-text">Purchase</p></td>
+<td><p class="card-text">0.016</p></td>
+<td><p class="card-text">0.000</p></td>
+<td><p class="card-text">0.013</p></td>
+<td><p class="card-text">0.029</p></td>
+</tr>
+<tr class="row-even"><td><p class="card-text">Total</p></td>
+<td><p class="card-text">0.412</p></td>
+<td><p class="card-text">0.243</p></td>
+<td><p class="card-text">0.345</p></td>
+<td><p class="card-text">1.0</p></td>
+</tr>
+</tbody>
+</table>
+<p class="card-text">In the question it is given that the customer made a purchase. Therefore we need to calculate the following probabilities:</p>
+<ul class="simple">
+<li><p class="card-text"><span class="math notranslate nohighlight">\(P(\text{MSN} | \text{Purchase}) \)</span></p></li>
+<li><p class="card-text"><span class="math notranslate nohighlight">\(P(\text{Recipe Source} | \text{Purchase}) \)</span></p></li>
+<li><p class="card-text"><span class="math notranslate nohighlight">\(P(\text{Yahoo} | \text{Purchase}) \)</span></p></li>
+</ul>
+<p class="card-text">We get:</p>
+<div class="math notranslate nohighlight">
+\[
+P(\text{MSN} | \text{Purchase}) = \frac{P(\text{MSN} \cap \text{Purchase})}{P(\text{Purchase})} = \frac{0.016}{0.029} \approx 0.552
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+P(\text{Recipe Source} | \text{Purchase}) = \frac{P(\text{Recipe Source} \cap \text{Purchase})}{P(\text{Purchase})} = \frac{0.000}{0.029} \approx 0.0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+P(\text{Yahoo} | \text{Purchase}) = \frac{P(\text{Yahoo} \cap \text{Purchase})}{P(\text{Purchase})} = \frac{0.013}{0.029} \approx 0.448
+\]</div>
+<p class="card-text">Therefore, based on the contingency table above, it is most likely that visitors from MSN make a purchase at Amazon.com</p>
+</div>
+</details><div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Treat that customers make a purchase as a given.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./03 - Conditional Probability/script"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="01-introduction.html" title="previous page">Introduction</a>
+    <a class='right-next' id="next-link" href="03-probability-trees.html" title="next page">Probability Trees</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Prof. Dr. Jürgen Hackl<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
